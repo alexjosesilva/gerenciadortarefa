@@ -18,11 +18,16 @@ export class TarefaService {
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
 
+  buscarPorId(id: number): Tarefa {
+    const tarefas: Tarefa[] = this.listarTodos();
+    return tarefas.find(tarefa => tarefa.id === id);
+  }
+  
   /* buscarPorId(id: number, tarefa: Tarefa): Tarefa {
     const tarefas: Tarefa[] = this.listarTodos();
     return tarefas.find(tarefa => tarefa.id === id);
-  } */
-
+  }
+ */
   atualizar(tarefa: Tarefa): void {
     const tarefas: Tarefa[] = this.listarTodos();
     tarefas.forEach((obj, index, objs) => { 
